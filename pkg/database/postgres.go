@@ -26,7 +26,6 @@ func ConnectDB() *gorm.DB {
 
 	log.Println("Database terhubung! Menjalankan AutoMigrate...")
 
-	// GORM akan otomatis membuat tabel "users" jika belum ada
 	err = db.AutoMigrate(&model.User{})
 	if err != nil {
 		log.Fatal("Gagal membuat tabel:", err)
@@ -49,7 +48,7 @@ func runMigrations(db *gorm.DB) {
 	}
 
 	m, err := migrate.NewWithDatabaseInstance(
-		"file://./pkg/database/migrations", // Folder tempat kamu menaruh file .sql
+		"file://./pkg/database/migrations",
 		"postgres", driver)
 	if err != nil {
 		log.Fatal("Gagal inisialisasi migrasi:", err)

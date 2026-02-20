@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"user_crud/internal/model" // SESUAIKAN NAMA MODULE
+	"user_crud/internal/model"
 	"user_crud/internal/repository"
 	"user_crud/internal/service"
 
@@ -30,18 +30,14 @@ func (h *UserHandler) Create(c *fiber.Ctx) error {
 }
 
 func (h *UserHandler) GetAll(c *fiber.Ctx) error {
-	// 1. Tangkap query parameter '?role=' dari URL
 	role := c.Query("role") 
 
 	var users []model.User
 	var err error
 
-	// 2. Cek apakah ada parameter role yang dikirim
 	if role != "" {
-		// Jika ada, panggil fungsi FindByRole dari Repository
 		users, err = h.Repo.FindByRole(role)
 	} else {
-		// Jika query kosong, ambil semua data
 		users, err = h.Repo.FindAll()
 	}
 
