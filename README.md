@@ -1,3 +1,5 @@
+# Akses link ini untuk testing api yang sudah dipublic: https://drive.google.com/file/d/1sQmG_FObWsVq7AFPbCVWWmKRwPovnwrh/view?usp=sharing
+
 # CRUD User API - Role Management System
 
 RESTful API berkinerja tinggi yang dibangun menggunakan **Go (Golang)** dan **Fiber Framework**. API ini dirancang khusus untuk mengelola data pengguna dengan sistem berbasis peran (*Role-Based Access Control*) yang mencakup `admin`, `owner`, dan `customer`. Sangat cocok digunakan sebagai *backend* untuk aplikasi direktori UMKM.
